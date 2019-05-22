@@ -4,7 +4,7 @@ import shutil
 import zipfile
 from zipfile import ZipFile
 
-parser = argparse.ArgumentParser(description='Usage: python moregan.py --name MorganKarlFemale')
+parser = argparse.ArgumentParser(description='Example usage: python moregan.py --name MorganKarlFemale')
 parser.add_argument('--name', help='Name to copy. Must come from src/ without the file ext.')
 args = parser.parse_args()
 
@@ -37,6 +37,6 @@ pakfile = 'patch_' + args.name + '.pak'
 shutil.move(zipfile_path, pwd + pakfile)
 
 # Zip one more time for good measure.
-# Uncomment if you want to send this to someone else in a handy zip file
-with ZipFile(zipfile_path, 'w') as zip:
-  zip.write(pwd + pakfile, pakfile, zipfile.ZIP_DEFLATED)
+# Uncomment if you want to send this to someone else in a handy zip file.
+#with ZipFile(zipfile_path, 'w') as zip:
+#  zip.write(pwd + pakfile, pakfile, zipfile.ZIP_DEFLATED)
